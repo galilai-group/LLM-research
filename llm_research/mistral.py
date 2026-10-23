@@ -14,7 +14,7 @@ from transformers.modeling_outputs import (
 
 class MistralBackbone(torch.nn.Module):
     def __init__(self, backbone, head):
-        super().__int__(self)
+        super().__init__()
         self.backbone = backbone
         self.head = head
 

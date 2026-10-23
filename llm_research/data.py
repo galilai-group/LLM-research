@@ -144,9 +144,9 @@ def from_name(name: str, from_gcs: str = None):
         
         elif name == "tau/commonsense_qa":
             # function to be used if commonsense dataset is chosen, combines question and answer choices
-            # makes the answers and choices corresponds to numbers instead of letters
+            # makes the answers and choices correspond to numbers instead of letters
             def preprocess(example):
-                # combine question and chouces
+                # combine question and choices
                 question = example["question"]
                 print(f'{example["choices"]}')
                 choices = example["choices"]["text"]
@@ -158,7 +158,7 @@ def from_name(name: str, from_gcs: str = None):
                 if split != "test":
                     label = ord(example["answerKey"]) - ord("A")
                 else:
-                    # dummy lable so that the code can run, replacing "test" with "validation" as "test" does not include
+                    # dummy label so that the code can run, replacing "test" with "validation" as "test" does not include
                     # the answerKey
                     label = 0  
                 # return them
